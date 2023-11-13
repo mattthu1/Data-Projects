@@ -12,6 +12,7 @@ from scipy import stats # isntead of importing the entire scipy package, we impo
 data_URL = "https://bronx.lehman.cuny.edu/api/views/2q3n-mzjq/rows.csv?accessType=DOWNLOAD"
 bronx_pop_density = pd.read_csv(data_URL)
 
-bronx_pop_density['Pop. prop. under 18'] = bronx_pop_density["Pop. Under 18"]/bronx_po
+bronx_pop_density['Pop. prop. under 18'] = bronx_pop_density["Pop. Under 18"] / bronx_pop_density["Total Population 2010"]
 display(bronx_pop_density[["Zipcode", "Total Population 2010", "Pop. Under 18","Pop. prop. under 18"]])
+
 np.mean(bronx_pop_density['Pop. prop. under 18'])
